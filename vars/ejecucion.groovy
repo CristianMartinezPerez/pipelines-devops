@@ -8,10 +8,8 @@ def call(){
 			stages {
 				stage('Pipeline') {
 					steps {
-						   /*echo "Choice: ${params.herramienta}"*/
+
 						   script{				 
-							 /*def ejecucion = (params.herramienta == 'gradle') ? load 'gradle.groovy' : load 'maven.groovy'
-							 ejecucion.call()*/		
 							 
 							 env.HERRAMIENTA = params.herramienta 
 							 
@@ -34,7 +32,5 @@ def call(){
 
 			}
 		}
-  
-}
 
 return this;
