@@ -36,7 +36,7 @@ def call(){
 								  {
 								  	   // println "Ejecucion :" + params.herramienta
 									   if (params.herramienta == 'gradle') 
-									       gradle.call(validStages)
+									       gradle.call(params.stage)
 										else
 										   maven.call()
 								  }

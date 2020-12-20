@@ -3,7 +3,7 @@ def call(String stages){
 
                        println 'Recibidos parametros ' + stages
 					   
-					   Jobs = Stages.split(';')
+					   Jobs = stages.split(';')
 					   
 					   def bEjecutarBT = false
 					   def bEjecutarSonar = false;
