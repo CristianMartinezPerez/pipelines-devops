@@ -19,28 +19,28 @@ def call(){
 						   
 						     def validGradle = "Build & Test;Sonar;Run;Rest;Nexus"
 							 def validMaven = "Compile;Test;Jar;SonarQube analysis;Run;Rest;Nexus"
+							 def validStages = "";
 							 
 							 def funciones   = new Funciones()
 							 def bOK = false
 							 
-							 bOK = funciones.CheckStage(params.herramienta,params.stage,validGradle)
-						   
-							 println "Ejecucion :" + params.herramienta
 							 env.HERRAMIENTA = params.herramienta 
 							 
-							if (params.herramienta == 'gradle') 
-							{
-								gradle.call()
-							}
-							else 
-							{
-								maven.call()
-							}
-							 
-							 //
-				 
-							 
-							 //
+							 if (params.herramienta == 'gradle') 
+								validStages  = validGradle
+                            else
+								validStages  = validMaven		
+
+							bOK = funciones.CheckStage(params.herramienta,params.stage,validStages)
+								  if (bOK)
+								  {
+								  	   println "Ejecucion :" + params.herramienta
+									   def pipe = "${params.herramienta}"
+									   pipe.call()
+								  }
+								  else
+								      println 'Parametros no Valido'
+
 						   }
 					}
 								
