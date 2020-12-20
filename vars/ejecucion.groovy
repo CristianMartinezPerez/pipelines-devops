@@ -41,7 +41,10 @@ def call(){
 										   maven.call()
 								  }
 								  else
-								      println 'Parametros no Valido'
+								      {
+									   error("Parametros no Valido")
+									  }
+								      
 
 						   }
 					}
