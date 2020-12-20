@@ -25,7 +25,6 @@ def call(){
 							 def bOK = false
 							 
 							 env.HERRAMIENTA = params.herramienta
-							 env.STAGES = params.stage
 							 
 							 if (params.herramienta == 'gradle') 
 								validStages  = validGradle

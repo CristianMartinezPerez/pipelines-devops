@@ -20,15 +20,16 @@ def call( String stages){
 						   if (job == 'Rest') bEjecutarRest = true;
 						   if (job == 'Nexus') bEjecutarNexus = true;						   
 						}
-  
-				       stage('Build & Test')
-					   {
-					     if (bEjecutarBT)
-						 {
-						  env.TAREA = env.STAGE_NAME
-					      bat "gradle clean build"  
-						 }
+ 					   if (bEjecutarBT)
+						{ 
+						   stage('Build & Test')
+						   {
 
+							  env.TAREA = env.STAGE_NAME
+							  bat "gradle clean build"  
+							 
+
+						   }
 					   }
 				       stage('Sonar')
 					   {
