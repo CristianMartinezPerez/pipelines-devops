@@ -34,7 +34,7 @@ def call(){
 							bOK = funciones.CheckStage(params.herramienta,params.stage,validStages)
 								  if (bOK)
 								  {
-								  	   println "Parametros stage enviados :" + env.STAGES
+								  	   println "Parametros stage enviados :" + params.stage
 									   if (params.herramienta == 'gradle') 
 									       gradle.call(params.stage)
 										else
