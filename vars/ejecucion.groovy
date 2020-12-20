@@ -37,7 +37,7 @@ def call(){
 								  {
 								  	   println "Parametros stage enviados :" + env.STAGES
 									   if (params.herramienta == 'gradle') 
-									       gradle.call()
+									       gradle.call(params.stage)
 										else
 										   maven.call()
 								  }
