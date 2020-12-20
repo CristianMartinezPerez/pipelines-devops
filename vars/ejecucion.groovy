@@ -3,14 +3,22 @@ def call(){
 		pipeline {
 			agent any
 			
-			parameters { choice(name: 'herramienta', choices: ['gradle', 'maven'], description: '') }
+			parameters { choice(name: 'herramienta', choices: ['gradle', 'maven'], description: '') 
+						 string{name: 'stage', defaultValue:'',description:''}
+			}
 
 			stages {
 				stage('Pipeline') {
 					steps {
 
-						   script{				 
+						   script{
+						   
+						     def validGradle = "Build & Test;Sonar;Run;Rest;Nexus"
+							 def validMaven = "Compile;Test;Jar;SonarQube analysis;Run;Rest;Nexus"
 							 
+							 
+						   
+							 println "Ejecucion :" + params.herramienta
 							 env.HERRAMIENTA = params.herramienta 
 							 
 							if (params.herramienta == 'gradle') 
@@ -19,10 +27,16 @@ def call(){
 							}
 							else 
 							{
-								def ejecucion = load 'maven.groovy'
 								maven.call()
 							}
 							 
+							 //
+							  
+							  
+							 
+							 
+							 
+							 //
 						   }
 					}
 								
