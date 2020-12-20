@@ -34,9 +34,11 @@ def call(){
 							bOK = funciones.CheckStage(params.herramienta,params.stage,validStages)
 								  if (bOK)
 								  {
-								  	   println "Ejecucion :" + params.herramienta
-									   def pipe = "${params.herramienta}"
-									   pipe.call()
+								  	   // println "Ejecucion :" + params.herramienta
+									   if (params.herramienta == 'gradle') 
+									       gradle.call()
+										else
+										   maven.call()
 								  }
 								  else
 								      println 'Parametros no Valido'
