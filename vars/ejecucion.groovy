@@ -1,3 +1,7 @@
+// ejecucion.groovy
+
+import org.cl.*
+
 def call(){
   
 		pipeline {
@@ -16,7 +20,10 @@ def call(){
 						     def validGradle = "Build & Test;Sonar;Run;Rest;Nexus"
 							 def validMaven = "Compile;Test;Jar;SonarQube analysis;Run;Rest;Nexus"
 							 
+							 def funciones   = new Funciones()
+							 def bOK = false
 							 
+							 bOK = funciones.CheckStage(params.herramienta,params.stage,validGradle)
 						   
 							 println "Ejecucion :" + params.herramienta
 							 env.HERRAMIENTA = params.herramienta 
@@ -31,63 +38,7 @@ def call(){
 							}
 							 
 							 //
-							  def CheckStage(herramienta,stage, Stages) 
-								{
-										String[] validJobs
-										validJobs = Stages.split(';')
-										
-										String[] jobs
-										jobs = stage.split(';')
-										
-										def valido = false
-										def stageInvalido ="";
-										def countValidos = 0;
-										def nuneroParametro=0;
-										
-										
-										for( String job : jobs )
-										{
-											nuneroParametro++;
-											for( String validJob : validJobs )
-											{
-												println job.toUpperCase() +"<---> "+ validJob.toUpperCase()
-												countValidos=0;
-												if (job.toUpperCase() == validJob.toUpperCase())
-													countValidos ++;
-											   
-												if (countValidos>0)
-												{
-													valido = true
-													break;
-												}
-											}
-											
-											if (countValidos==0)
-											   {
-												   stageInvalido = job;
-													valido = false
-													break; 
-											   }
-										}
-										
-										//devuelve el primer parametro stage no valido
-										if (!valido)
-											println "Stage no valido ---> " + stageInvalido + " ( ver parametro stage numero " + nuneroParametro +")"
-										
-										
-										
-										if (valido)
-										{
-											println "Ejecucion :" + herramienta
-											println "Stage :" + stage
-										}
-										
-										return valido;
-								}
-
-							  
-							 
-							 
+				 
 							 
 							 //
 						   }
