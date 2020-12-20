@@ -1,6 +1,6 @@
 
-def call(String stages){
-
+def call(){
+                       def stages = env.STAGES;
                        println 'Recibidos parametros ' + stages
 					   
 					   Jobs = stages.split(';')
