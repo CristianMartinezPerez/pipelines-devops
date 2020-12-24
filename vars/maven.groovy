@@ -49,7 +49,7 @@ def call(String stages){
 	
    if (bEjecutarSonar)
 	{	
-		stage('SonarQube analysis') {
+		stage('Sonar') {
 			env.TAREA = env.STAGE_NAME
 			withSonarQubeEnv(installationName: 'SonarQube') {
 			  sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'

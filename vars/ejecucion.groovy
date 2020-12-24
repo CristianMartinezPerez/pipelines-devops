@@ -18,7 +18,7 @@ def call(){
 						   script{
 						   
 						     def validGradle = "Build & Test;Sonar;Run;Rest;Nexus"
-							 def validMaven = "Compile;Test;Jar;SonarQube analysis;Run;Rest;Nexus"
+							 def validMaven = "Compile;Test;Jar;Sonar;Run;Rest;Nexus"
 							 def validStages = "";
 							 
 							 def funciones   = new Funciones()
