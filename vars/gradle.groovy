@@ -2,7 +2,7 @@
 def call( String stages){
                        
                        println 'Recibidos parametros ' + stages
-					   println 'Directorio' + ${WORKSPACE}
+					   println 'Directorio' + env.WORKSPACE
 					   
 					   def Jobs = stages.split(';')
 					   
