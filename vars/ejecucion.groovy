@@ -16,7 +16,7 @@ def call(){
 					steps {
 
 						   script{
-						     sh 'env'
+						     
 						     def validGradle = "Build & Test;Sonar;Run;Rest;Nexus"
 							 def validMaven = "Compile;Test;Jar;Sonar;Run;Rest;Nexus"
 							 def validStages = "";
