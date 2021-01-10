@@ -30,7 +30,10 @@ def call(){
 							 if (params.herramienta == 'gradle') 
 								validStages  = validGradle
                              else
-								validStages  = validMaven		
+								validStages  = validMaven	
+							   
+							 if (params.stage == '')
+							     params.stage = validStages
 
 							bOK = funciones.CheckStage(params.herramienta,params.stage,validStages)
 								  if (bOK)
