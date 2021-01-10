@@ -16,7 +16,8 @@ def call(){
 					steps {
 
 						   script{
-						     
+						     bat 'set'
+							   
 						     def validGradle = "Build & Test;Sonar;Run;Rest;Nexus"
 							 def validMaven = "Compile;Test;Jar;Sonar;Run;Rest;Nexus"
 							 def validStages = "";
