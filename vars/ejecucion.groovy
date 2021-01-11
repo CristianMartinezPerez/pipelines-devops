@@ -33,7 +33,7 @@ def call(){
                              else
 								validStages  = validMaven	
 							   
-							 if (params.stage == '')
+							 if (params.stage == "")
 							     params.stage = validStages
 
 							bOK = funciones.CheckStage(params.herramienta,params.stage,validStages)
