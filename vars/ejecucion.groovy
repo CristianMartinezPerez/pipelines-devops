@@ -43,11 +43,11 @@ def call(){
 							bOK = funciones.CheckStage(params.herramienta,stagePar,validStages)
 								  if (bOK)
 								  {
-								  	   println "Parametros stage enviados :" + params.stage
+								  	   println "Parametros stage enviados :" + stagePar
 									   if (params.herramienta == 'gradle') 
-									       gradle.call(params.stage)
+									       gradle.call(stagePar)
 										else
-										   maven.call(params.stage)
+										   maven.call(stagePar)
 								  }
 								  else
 								      {
