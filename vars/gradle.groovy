@@ -50,7 +50,7 @@ def call( String stages){
 						   stage('Run')
 						   {
 							  env.TAREA = env.STAGE_NAME
-							  bat "nohup start gradle bootRun &"
+							  bat "start gradle bootRun &"
 							  sleep 20
 							 
 						   }
