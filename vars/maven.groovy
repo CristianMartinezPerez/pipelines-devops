@@ -28,14 +28,14 @@ def call(String stages){
 	{ 
 		stage('Compile') {
         env.TAREA = env.STAGE_NAME
-        sh 'mvn clean compile -e'
+        bat 'mvn clean compile -e'
 		}
 	}
    if (bEjecutarTest)
 	{ 
 		stage('Test') {
 			env.TAREA = env.STAGE_NAME
-			sh 'mvn clean test -e'
+			bat 'mvn clean test -e'
 		}
 	}	
 
