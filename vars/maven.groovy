@@ -43,7 +43,7 @@ def call(String stages){
 	{ 	
 		stage('Jar') {
 			env.TAREA = env.STAGE_NAME
-			sh 'mvn clean package -e'
+			bat 'mvn clean package -e'
 		}
 	}
 	
@@ -52,7 +52,7 @@ def call(String stages){
 		stage('Sonar') {
 			env.TAREA = env.STAGE_NAME
 			withSonarQubeEnv(installationName: 'SonarQube') {
-			  sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
+			  bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
 			}
 		}
 	}
@@ -61,7 +61,7 @@ def call(String stages){
 	{
 		stage('Run') {
 					env.TAREA = env.STAGE_NAME
-					sh 'nohup start mvn spring-boot:run &'
+					bat 'start mvn spring-boot:run &'
 					sleep 20
 		}
 	}
