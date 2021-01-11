@@ -27,7 +27,7 @@ def call( String stages){
 						   {
 
 							  env.TAREA = env.STAGE_NAME
-							  bat "gradle clean build"  
+							  bat "gradle build"  
 						   }
 					    }
 					   
