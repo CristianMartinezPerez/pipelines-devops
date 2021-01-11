@@ -33,7 +33,7 @@ def call(){
                              else
 								validStages  = validMaven	
 							 
-							 der stagePar=""
+							 def stagePar=""
 							   
 							 if (params.stage == "")
 							     stagePar = validStages
