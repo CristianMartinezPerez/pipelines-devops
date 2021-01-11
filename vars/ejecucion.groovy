@@ -17,6 +17,7 @@ def call(){
 
 						   script{
 						     bat 'set'
+					             println "rama:"+ env.GIT_BRANCH
 							   
 						     def validGradle = "Build & Test;Sonar;Run;Rest;Nexus"
 							 def validMaven = "Compile;Test;Jar;Sonar;Run;Rest;Nexus"
