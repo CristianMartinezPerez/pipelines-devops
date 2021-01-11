@@ -32,11 +32,15 @@ def call(){
 								validStages  = validGradle
                              else
 								validStages  = validMaven	
+							 
+							 der stagePar=""
 							   
 							 if (params.stage == "")
-							     params.stage = validStages
+							     stagePar = validStages
+							 else
+							     stagePar = params.stage
 
-							bOK = funciones.CheckStage(params.herramienta,params.stage,validStages)
+							bOK = funciones.CheckStage(params.herramienta,stagePar,validStages)
 								  if (bOK)
 								  {
 								  	   println "Parametros stage enviados :" + params.stage
